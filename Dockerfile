@@ -55,7 +55,9 @@ RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
 
 ### we want to be up-to-date so we update the image
 RUN apt-get update
+RUN apt-get autoremove -y
 RUN apt-get -y dist-upgrade
+RUN apt-get cleanup
 
 USER 1000
 
