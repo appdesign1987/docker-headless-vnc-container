@@ -53,6 +53,10 @@ RUN $INST_SCRIPTS/libnss_wrapper.sh
 ADD ./src/common/scripts $STARTUPDIR
 RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
 
+### we want to be up-to-date so we update the image
+RUN apt-get update
+RUN apt-get -y dist-upgrade
+
 USER 1000
 
 ENTRYPOINT ["/dockerstartup/vnc_startup.sh"]
