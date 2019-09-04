@@ -57,7 +57,7 @@ RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
 RUN apt-get update
 RUN apt-get autoremove -y
 RUN apt-get -y dist-upgrade
-RUN apt-get cleanup
+RUN apt-get clean
 
 USER 1000
 
